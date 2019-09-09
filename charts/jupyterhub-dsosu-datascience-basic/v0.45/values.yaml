@@ -1,6 +1,6 @@
 jupyterhub:
-#  proxy:
-#    secretToken: {{ cat (.Release.Time | toString) .Release.Name .Chart.Name | sha256sum | substr 0 31 }}
+  proxy:
+    secretToken: "78767972dd3d0db5a98fb56554f4484daa57bc35bd73dc61aafebed8ac9fe3df"
   singleuser:
     memory:
       limit: 1G
