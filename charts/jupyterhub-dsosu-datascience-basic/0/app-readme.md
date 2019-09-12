@@ -2,7 +2,8 @@
 
 The "DataScience Notebook" [Jupyter Stack](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-datascience-notebook), including:
 
-Uh..
+![jlablogo](https://avatars1.githubusercontent.com/u/22800682?s=200&v=4)
+
 
 * Pandoc and TeX Live
 * git, emacs, jed, nano, tzdata, and unzip

@@ -1,24 +1,24 @@
 categories:
 - DataScience
 questions:
-- variable: jupyterhub.singleuser.memory.limit
-  default: "2G"
-  description: "Memory limit per student."
-  type: string
-  label: "Memory Limit"
 - variable: jupyterhub.singleuser.memory.guarantee
   default: "0.5G"
   description: "Memory gaurantee per student."
   type: string
   label: "Memory Gaurantee"
-- variable: jupyterhub.singleuser.cpu.limit
-  default: "2"
-  description: "CPU limit per student."
+- variable: jupyterhub.singleuser.memory.limit
+  default: "2G"
+  description: "Memory limit per student."
   type: string
-  label: "CPU Limit"
+  label: "Memory Limit"
 - variable: jupyterhub.singleuser.cpu.guarantee
   default: "0.25"
   description: "CPU gaurantee per student."
   type: string
   label: "CPU Gaurantee"
+- variable: jupyterhub.singleuser.cpu.limit
+  default: "2"
+  description: "CPU limit per student."
+  type: string
+  label: "CPU Limit"
 
