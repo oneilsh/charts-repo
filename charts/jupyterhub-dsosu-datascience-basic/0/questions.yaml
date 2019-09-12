@@ -21,13 +21,13 @@ questions:
   description: "CPU gaurantee per student."
   type: string
   label: "CPU Gaurantee"
-- variable: jupyterhub.auth.admin.users
-  default: "oneilsh, smithj"
-  type: string
-  label: "Admins"
-  description: "Usernames with administrator access, comma-separated"
-- variable: jupyterhub.auth.whitelist.users
-  default: "bennyb, whitej, carrolk"
-  type: string
-  label: "Users"
-  description: "Whitelist of user names that can access."
+  #- variable: jupyterhub.auth.admin.users
+  #default: "oneilsh, smithj"
+  #type: string
+  #label: "Admins"
+  #description: "Usernames with administrator access, comma-separated"
+  #- variable: jupyterhub.auth.whitelist.users
+  #default: "bennyb, whitej, carrolk"
+  #type: string
+  #label: "Users"
+  #description: "Whitelist of user names that can access."
