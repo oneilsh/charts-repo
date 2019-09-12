@@ -28,7 +28,10 @@ jupyterhub:
         c.Spawner.cmd = ['jupyter-labhub']
       authsetting: |
         from jupyterhub.auth import DummyAuthenticator
+        from tornado import gen
+
         class DummyExtraAuthenticator(DummyAuthenticator):
+          
           @gen.coroutine
           def pre_spawn_start(self, user, spawner):
             spawner.environment['NB_USER'] = user.name
