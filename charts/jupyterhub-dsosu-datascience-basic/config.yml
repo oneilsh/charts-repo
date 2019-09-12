@@ -1,0 +1,4 @@
+name: JupyterLab Data Science
+description: JupyterLab with support for R, Python, and Julia kernels.
+version: latest
+maintainer: github.com/oneilsh
