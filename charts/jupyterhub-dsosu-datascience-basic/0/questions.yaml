@@ -22,7 +22,7 @@ questions:
   type: string
   label: "CPU Gaurantee"
 - variable: jupyterhub.auth.admin.users
-  default: "smithj, jonesl"
+  default: "oneilsh, smithj"
   type: string
   label: "Admins"
   description: "Usernames with administrator access, comma-separated"
