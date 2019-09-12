@@ -2,6 +2,8 @@
 
 The "DataScience Notebook" [Jupyter Stack](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-datascience-notebook), including:
 
+Uh..
+
 * Pandoc and TeX Live
 * git, emacs, jed, nano, tzdata, and unzip
 * R features: 
