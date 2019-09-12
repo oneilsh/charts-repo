@@ -12,14 +12,14 @@ questions:
   type: string
   label: "Memory Gaurantee"
 - variable: jupyterhub.singleuser.cpu.limit
-  default: "2"
+  default: 2
   description: "CPU limit per student."
-  type: string
+  type: float
   label: "CPU Limit"
 - variable: jupyterhub.singleuser.cpu.guarantee
-  default: "0.25"
+  default: 0.25
   description: "CPU gaurantee per student."
-  type: string
+  type: float
   label: "CPU Gaurantee"
   #- variable: jupyterhub.auth.admin.users
   #default: "oneilsh, smithj"
