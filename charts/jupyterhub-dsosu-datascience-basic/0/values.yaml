@@ -27,6 +27,7 @@ jupyterhub:
       jupyterlab: |
         c.Spawner.cmd = ['jupyter-labhub']
       authsetting: |
+        from jupyterhub.auth import DummyAuthenticator
         class DummyExtraAuthenticator(DummyAuthenticator):
           @gen.coroutine
           def pre_spawn_start(self, user, spawner):
