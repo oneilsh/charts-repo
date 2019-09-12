@@ -29,9 +29,10 @@ jupyterhub:
       authsetting: |
         class DummyExtraAuthenticator(DummyAuthenticator):
           @gen.coroutine
-        def pre_spawn_start(self, user, spawner):
-          spawner.environment['NB_USER'] = user.name
-
+          def pre_spawn_start(self, user, spawner):
+            spawner.environment['NB_USER'] = user.name
+        
+        c.JupyterHub.authenticator_class = DummyExtraAuthenticator
 
 
 
