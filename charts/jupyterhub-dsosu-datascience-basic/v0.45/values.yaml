@@ -12,14 +12,16 @@ jupyterhub:
       name: jupyter/datascience-notebook
       tag: 82d1d0bf0867
     defaultUrl: "/lab"
-    profileList:
-      - display_name: "DataScience Notebook"
-        description: "Python, Julia, R Notebooks."
-        default: true
-      - display_name: "Original Hub Interface"
-        description: "Same as DataScience Notebook, but the traditional JupyterHub interface."
-        kubespawner_override:
-          default_url: "/tree"
+
+    #profileList:
+    #  - display_name: "DataScience Notebook"
+    #    description: "Python, Julia, R Notebooks."
+    #    default: true
+    #  - display_name: "Original Hub Interface"
+    #    description: "Same as DataScience Notebook, but the traditional JupyterHub interface."
+    #    kubespawner_override:
+    #      default_url: "/tree"
+
   hub:
     extraConfig: 
       jupyterlab: |
