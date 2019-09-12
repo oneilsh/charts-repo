@@ -22,12 +22,12 @@ questions:
   type: string
   label: "CPU Gaurantee"
 - variable: jupyterhub.auth.admin.users
-  default: ["smithj"]
-  type: enum
-  label: "Users"
-  description: "Usernames with administrator access."
+  default: "smithj, jonesl"
+  type: string
+  label: "Admins"
+  description: "Usernames with administrator access, comma-separated"
 - variable: jupyterhub.auth.whitelist.users
-  default: ["bennyb", "whitej"]
-  type: enum
+  default: "bennyb, whitej, carrolk"
+  type: string
   label: "Users"
   description: "Whitelist of user names that can access."
