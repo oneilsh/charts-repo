@@ -12,6 +12,7 @@ jupyterhub:
       name: jupyter/datascience-notebook
       tag: 82d1d0bf0867
     defaultUrl: "/lab"
+    uid: 0
 
     #profileList:
     #  - display_name: "DataScience Notebook"
@@ -23,7 +24,8 @@ jupyterhub:
     #      default_url: "/tree"
 
   hub:
-    extraConfig: 
+    extraConfig:
+      # note that the keys here (jupyterlab, authsetting) are arbitrary... 
       jupyterlab: |
         c.Spawner.cmd = ['jupyter-labhub']
       authsetting: |
