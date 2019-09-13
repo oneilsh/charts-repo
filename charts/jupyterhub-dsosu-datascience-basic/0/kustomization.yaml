@@ -1,0 +1,4 @@
+resources:
+  charts/jupyterhub/templates/hub/secret.yaml
+patches:
+  templates/hub/secret.yaml
