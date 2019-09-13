@@ -12,13 +12,6 @@ jupyterhub:
       name: jupyter/datascience-notebook
       tag: 82d1d0bf0867
     defaultUrl: "/lab"
-    storage:
-      static:
-        subPath: home/{username}
-    extraEnv:
-      CHOWN_HOME: 'yes'
-    uid: 0
-    fsGid: 0
 
     #profileList:
     #  - display_name: "DataScience Notebook"
