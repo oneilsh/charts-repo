@@ -13,11 +13,11 @@ questions:
   label: "Memory Gaurantee"
   # TODO: the variable types supported here are actually quite limited
   # may have to set them as strings and do some parsing within the template (how do we do this without forking the jupyerhub base??)
-  #- variable: jupyterhub.singleuser.cpu.limit
-  #default: 2
-  #description: "CPU limit per student."
-  #type: int
-  #label: "CPU Limit"
+- variable: kustomize.cpu.limit
+  default: "2"
+  description: "CPU limit per student."
+  type: string
+  label: "CPU Limit"
   #- variable: jupyterhub.singleuser.cpu.guarantee
   #default: 0.25
   #description: "CPU gaurantee per student."

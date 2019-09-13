@@ -1,4 +1,6 @@
 resources:
   charts/jupyterhub/templates/hub/secret.yaml
+  values.yaml
 patches:
   templates/hub/secret.yaml
+  question_patch_values.yaml

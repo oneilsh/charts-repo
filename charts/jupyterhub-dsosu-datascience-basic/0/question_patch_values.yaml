@@ -1,0 +1,4 @@
+jupyterhub:
+    cpu:
+      limit: {{ kustomize.cpu.limit | float64 }}
+
