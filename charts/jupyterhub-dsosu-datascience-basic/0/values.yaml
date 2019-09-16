@@ -37,7 +37,7 @@ jupyterhub:
     service:
       annotations:
         getambassador.io/config: |
-          apiVersion: ambassador/0
+          apiVersion: ambassador/v0
           kind: Mapping
           name: jupyter_test_mapping
           prefix: /jupyter_test/
