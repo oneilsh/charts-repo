@@ -27,6 +27,12 @@ jupyterhub:
     #    kubespawner_override:
     #      default_url: "/tree"
 
+  ingress:
+    enabled: true
+    hosts:
+      - http://a52976acbd8d411e991980a5d440c295-1080403158.us-west-2.elb.amazonaws.com
+    pathSuffix: '/jupyter_test/'
+
   hub:
     service:
       annotations:
