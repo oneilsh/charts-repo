@@ -36,15 +36,15 @@ jupyterhub:
       kubernetes.io/ingress.class: nginx
 
   hub:
-    baseUrl: /jupyter_test/
-    service:
-      annotations:
-        getambassador.io/config: |
-          apiVersion: ambassador/v0
-          kind: Mapping
-          name: jupyter_test_mapping
-          prefix: /jupyter_test/
-          service: hub
+    #baseUrl: /jupyter_test/
+    #service:
+    #  annotations:
+    #    getambassador.io/config: |
+    #      apiVersion: ambassador/v0
+    #      kind: Mapping
+    #      name: jupyter_test_mapping
+    #      prefix: /jupyter_test/
+    #      service: hub
     extraConfig:
       # note that the keys here (jupyterlab, authsetting) are arbitrary... 
       jupyterlab: |
@@ -61,6 +61,6 @@ jupyterhub:
         
         c.JupyterHub.authenticator_class = DummyExtraAuthenticator
 
-
+        c.JupyterHub.base_url = "testing_yo"
 
 
