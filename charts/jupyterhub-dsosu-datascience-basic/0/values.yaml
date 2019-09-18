@@ -31,7 +31,7 @@ jupyterhub:
     enabled: true
     hosts:
       - a932d41c0da5911e9b4d102cf3fe129b-1867685225.us-west-2.elb.amazonaws.com
-    pathSuffix: 'jupyter_test/'
+    pathSuffix: '*'
     annotations: 
       kubernetes.io/ingress.class: nginx
 
