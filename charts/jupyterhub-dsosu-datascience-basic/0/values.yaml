@@ -36,6 +36,7 @@ jupyterhub:
       kubernetes.io/ingress.class: nginx
 
   hub:
+    baseUrl: /jupyter_test/
     service:
       annotations:
         getambassador.io/config: |
