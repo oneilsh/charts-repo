@@ -26,6 +26,16 @@ jupyterhub:
     #    description: "Same as DataScience Notebook, but the traditional JupyterHub interface."
     #    kubespawner_override:
     #      default_url: "/tree"
+    
+    storage:
+      extraVolumes: 
+        - name: jupyterhub-shared
+          persistentVolumeClaim:
+            claimName: jupyterhub-shared-volume
+      extraVolumeMounts:
+        - name: jupyterhub-shared
+          mountPath: /home/shared
+
 
   ingress:
     enabled: true
@@ -62,4 +72,14 @@ jupyterhub:
         c.JupyterHub.authenticator_class = DummyExtraAuthenticator
 
 
+nfs-server-provisioner:
+  persistence: 
+    enabled: true
+    accessMode: ReadWriteMany
+    size: 10Gi
 
+  storageClass:
+    create: true
+    defaultClass: false
+    name: nfs
+    allowVolumeExpansion: true
