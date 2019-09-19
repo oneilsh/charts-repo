@@ -1,13 +1,38 @@
 apiVersion: v1
-kind: PersistentVolumeClaim
+kind: PersistentVolume
 metadata:
-  name: shared-vol
-  # trying to avoid this apparent bug: https://stackoverflow.com/questions/51358856/kubernetes-cant-delete-persistentvolumeclaim-pvc
-  finalizers: []
+  name: efs-persist
 spec:
-  storageClassName: nfs
+  capacity:
+    storage: 123Gi
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    server: fs-f5c4ec5e.efs.us-west-2.amazonaws.com
+    path: "/"
+
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: efs-persist
+spec:
+  storageClassName: ""
   accessModes:
     - ReadWriteMany
   resources:
     requests:
-      storage: 2Gi
+      storage: 11Gi
+
+#apiVersion: v1
+#kind: PersistentVolumeClaim
+#metadata:
+#  name: shared-vol
+#  # trying to avoid this apparent bug: https://stackoverflow.com/questions/51358856/kubernetes-cant-delete-persistentvolumeclaim-pvc
+#  finalizers: []
+#spec:
+#  storageClassName: nfs
+#  accessModes:
+#    - ReadWriteMany
+#  resources:
+#    requests:
+#      storage: 2Gi

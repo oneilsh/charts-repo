@@ -28,14 +28,23 @@ jupyterhub:
     #      default_url: "/tree"
     
     storage:
-      homeMountPath: /home/{username}
-      extraVolumes: 
-        - name: jupyterhub-shared
-          persistentVolumeClaim:
-            claimName: shared-vol
-      extraVolumeMounts:
-        - name: jupyterhub-shared
-          mountPath: /home/shared
+      type: "static"
+      static:
+        pvcName: "efs-persist"
+        subPath: 'home/{username}'
+    extraEnv:
+      CHOWN_HOME: 'yes'
+    uid: 0
+    fsGid: 0
+    cmd: "start-singleuser.sh"
+      #homeMountPath: /home/{username}
+      #extraVolumes: 
+      #  - name: jupyterhub-shared
+      #    persistentVolumeClaim:
+      #      claimName: shared-vol
+      #extraVolumeMounts:
+      #  - name: jupyterhub-shared
+      #    mountPath: /home/shared
 
 
   ingress:
@@ -73,20 +82,20 @@ jupyterhub:
         c.JupyterHub.authenticator_class = DummyExtraAuthenticator
 
 
-nfs-server-provisioner:
-  persistence: 
-    enabled: true
-    storageClass: "gp2"
-    accessMode: ReadWriteOnce
-    size: 4Gi
+#nfs-server-provisioner:
+#  persistence: 
+#    enabled: true
+#    storageClass: "gp2"
+#    accessMode: ReadWriteOnce
+#    size: 4Gi
 
-  storageClass:
-    create: true
-    defaultClass: false
-    name: nfs
-    allowVolumeExpansion: true
-    provisionerName: nfs-prov
+#  storageClass:
+#    create: true
+#    defaultClass: false
+#    name: nfs
+#    allowVolumeExpansion: true
+#    provisionerName: nfs-prov
 
   # otherwise the name might be too long and hit the 63-char limit
-  nameOverride: nfs-prov
-  fullnameOverride: nfs-prov
+#  nameOverride: nfs-prov
+#  fullnameOverride: nfs-prov
