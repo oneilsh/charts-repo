@@ -75,7 +75,7 @@ jupyterhub:
 nfs-server-provisioner:
   persistence: 
     enabled: true
-    accessMode: ReadWriteMany
+    accessMode: ReadWriteOnce
     size: 20Gi
 
   storageClass:
@@ -85,5 +85,6 @@ nfs-server-provisioner:
     allowVolumeExpansion: true
     provisionerName: nfs-prov
 
+  # otherwise the name might be too long and hit the 63-char limit
   nameOverride: nfs-prov
   fullnameOverride: nfs-prov
