@@ -30,13 +30,15 @@ jupyterhub:
     storage:
       type: "static"
       static:
-        pvcName: "efs-persist"
+        pvcName: "shared-vol"
         subPath: 'home/{username}'
-    extraEnv:
-      CHOWN_HOME: 'yes'
-    uid: 0
-    fsGid: 0
-    cmd: "start-singleuser.sh"
+    #extraEnv:
+    #  CHOWN_HOME: 'yes'
+    #uid: 0
+    #fsGid: 0
+    #cmd: "start-singleuser.sh"
+
+  
       #homeMountPath: /home/{username}
       #extraVolumes: 
       #  - name: jupyterhub-shared
