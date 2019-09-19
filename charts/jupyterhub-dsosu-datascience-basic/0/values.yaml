@@ -28,6 +28,7 @@ jupyterhub:
     #      default_url: "/tree"
     
     storage:
+      homeMountPath: /home/{username}
       extraVolumes: 
         - name: jupyterhub-shared
           persistentVolumeClaim:
@@ -77,7 +78,7 @@ nfs-server-provisioner:
     enabled: true
     storageClass: "gp2"
     accessMode: ReadWriteOnce
-    size: 40Gi
+    size: 4Gi
 
   storageClass:
     create: true
