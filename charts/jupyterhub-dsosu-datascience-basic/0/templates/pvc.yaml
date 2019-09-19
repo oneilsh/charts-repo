@@ -3,6 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: shared-vol
 spec:
+  storageClassName: nfs
   accessModes:
     - ReadWriteMany
   resources:
