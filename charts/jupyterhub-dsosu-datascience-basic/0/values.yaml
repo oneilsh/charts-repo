@@ -85,3 +85,5 @@ nfs-server-provisioner:
     allowVolumeExpansion: true
     provisionerName: nfs-prov
 
+  nameOverride: nfs-prov
+  fullnameOverride: nfs-prov
