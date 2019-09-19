@@ -76,10 +76,12 @@ nfs-server-provisioner:
   persistence: 
     enabled: true
     accessMode: ReadWriteMany
-    size: 10Gi
+    size: 20Gi
 
   storageClass:
     create: true
     defaultClass: false
     name: nfs
     allowVolumeExpansion: true
+    provisionerName: nfs-prov
+
