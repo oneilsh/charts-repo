@@ -75,8 +75,8 @@ jupyterhub:
 nfs-server-provisioner:
   persistence: 
     enabled: true
-    storageClass: "-"
-    accessMode: "ReadWriteOnce"
+    storageClass: "gp2"
+    accessMode: ReadWriteOnce
     size: 20Gi
 
   storageClass:
