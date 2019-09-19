@@ -14,7 +14,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: shared-vol
+  name: home-vol
   # trying to avoid this apparent bug: https://stackoverflow.com/questions/51358856/kubernetes-cant-delete-persistentvolumeclaim-pvc
   finalizers: []
 spec:

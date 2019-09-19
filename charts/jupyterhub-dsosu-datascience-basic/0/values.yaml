@@ -30,7 +30,7 @@ jupyterhub:
     storage:
       type: "static"
       static:
-        pvcName: "shared-vol"
+        pvcName: "home-vol"
         subPath: 'home/{username}'
     #extraEnv:
     #  CHOWN_HOME: 'yes'
