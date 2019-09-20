@@ -12,11 +12,15 @@ jupyterhub:
       name: jupyter/datascience-notebook
       tag: 82d1d0bf0867
     defaultUrl: "/lab"
-    #uid: 0
-    #fsGid: 0
-    #cmd:
-    #  - jupyterhub-singleuser
-    #  - --allow-root
+    extraEnv:
+      NB_USER: '{username}'
+      CHOWN_HOME: yes
+      CHOWN_EXTRA_OPTS: '-R'
+    uid: 0
+    fsGid: 0
+    cmd:
+      - jupyterhub-singleuser
+      - --allow-root
 
     #profileList:
     #  - display_name: "DataScience Notebook"
