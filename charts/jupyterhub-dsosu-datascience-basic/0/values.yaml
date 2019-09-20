@@ -15,7 +15,7 @@ jupyterhub:
     extraEnv:
       NB_USER: '{username}'
       CHOWN_HOME: yes
-      CHOWN_EXTRA_OPTS: '-R'
+      #CHOWN_EXTRA_OPTS: '-R'
     uid: 0
     fsGid: 0
     cmd:
