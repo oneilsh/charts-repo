@@ -19,8 +19,6 @@ jupyterhub:
     uid: 0
     fsGid: 0
     cmd: ['start-singleuser.sh']
-    #  - jupyterhub-singleuser
-    #  - --allow-root
 
     #profileList:
     #  - display_name: "DataScience Notebook"
@@ -36,7 +34,7 @@ jupyterhub:
       static:
         pvcName: "home-vol"
         subPath: "home/{username}"
-    #  homeMountPath: /home/{username}
+      homeMountPath: /home/{username}
     #  extraVolumes: 
     #    - name: jupyterhub-shared
     #      persistentVolumeClaim:
@@ -56,18 +54,7 @@ jupyterhub:
 
   hub:
     baseUrl: /oneils/jupyter_test/
-    #service:
-    #  annotations:
-    #    getambassador.io/config: |
-    #      apiVersion: ambassador/v0
-    #      kind: Mapping
-    #      name: jupyter_test_mapping
-    #      prefix: /jupyter_test/
-    #      service: hub
     extraConfig:
-      # note that the keys here (jupyterlab, authsetting) are arbitrary... 
-      #jupyterlab: |
-      #  c.Spawner.cmd = ['jupyter-labhub', '--allow-root']
       authsetting: |
         from jupyterhub.auth import DummyAuthenticator
         from tornado import gen
@@ -94,6 +81,10 @@ nfs-server-provisioner:
     name: nfs
     allowVolumeExpansion: true
     provisionerName: nfs-prov
+    mountOptions:
+      - vers=4.1
+      - noatime
+      - no_root_squash
 
   # otherwise the name might be too long and hit the 63-char limit
   nameOverride: nfs-prov
