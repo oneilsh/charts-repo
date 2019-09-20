@@ -31,11 +31,11 @@ jupyterhub:
     #    kubespawner_override:
     #      default_url: "/tree"
     
-    #storage:
-    #  type: "static"
-    #  static:
-    #    pvcName: "home-vol"
-    #    subPath: 'home/{username}'  
+    storage:
+      type: "static"
+      static:
+        pvcName: "home-vol"
+        subPath: 'home/{username}'  
     #  homeMountPath: /home/{username}
     #  extraVolumes: 
     #    - name: jupyterhub-shared
@@ -64,7 +64,7 @@ jupyterhub:
     #      name: jupyter_test_mapping
     #      prefix: /jupyter_test/
     #      service: hub
-    extraConfig:
+    #extraConfig:
       # note that the keys here (jupyterlab, authsetting) are arbitrary... 
       #jupyterlab: |
       #  c.Spawner.cmd = ['jupyter-labhub', '--allow-root']
