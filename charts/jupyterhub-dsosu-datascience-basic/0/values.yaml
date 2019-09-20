@@ -64,21 +64,21 @@ jupyterhub:
     #      name: jupyter_test_mapping
     #      prefix: /jupyter_test/
     #      service: hub
-    #extraConfig:
+    extraConfig:
       # note that the keys here (jupyterlab, authsetting) are arbitrary... 
       #jupyterlab: |
       #  c.Spawner.cmd = ['jupyter-labhub', '--allow-root']
-      #authsetting: |
-      #  from jupyterhub.auth import DummyAuthenticator
-      #  from tornado import gen
+      authsetting: |
+        from jupyterhub.auth import DummyAuthenticator
+        from tornado import gen
 
-      # class DummyExtraAuthenticator(DummyAuthenticator):
+        class DummyExtraAuthenticator(DummyAuthenticator):
           
-      #    @gen.coroutine
-      #    def pre_spawn_start(self, user, spawner):
-      #      spawner.environment['NB_USER'] = user.name
+          @gen.coroutine
+          def pre_spawn_start(self, user, spawner):
+            spawner.environment['NB_USER'] = user.name
         
-      #  c.JupyterHub.authenticator_class = DummyExtraAuthenticator
+        c.JupyterHub.authenticator_class = DummyExtraAuthenticator
 
 
 nfs-server-provisioner:
