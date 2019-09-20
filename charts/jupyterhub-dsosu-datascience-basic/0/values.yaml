@@ -13,7 +13,7 @@ jupyterhub:
       tag: 82d1d0bf0867
     defaultUrl: "/lab"
     extraEnv:
-      NB_USER: '{username}'
+      #NB_USER: "{username}"
       CHOWN_HOME: "yes"
       CHOWN_EXTRA_OPTS: '-R'
     uid: 0
@@ -35,7 +35,7 @@ jupyterhub:
       type: "static"
       static:
         pvcName: "home-vol"
-        subPath: 'home/{username}'  
+        subPath: "home/{username}"
     #  homeMountPath: /home/{username}
     #  extraVolumes: 
     #    - name: jupyterhub-shared
