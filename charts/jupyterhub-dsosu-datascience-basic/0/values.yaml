@@ -15,10 +15,10 @@ jupyterhub:
     extraEnv:
       NB_USER: '{username}'
       CHOWN_HOME: "yes"
-      #CHOWN_EXTRA_OPTS: '-R'
+      CHOWN_EXTRA_OPTS: '-R'
     uid: 0
     fsGid: 0
-    #cmd:
+    cmd: ['start-singleuser.sh']
     #  - jupyterhub-singleuser
     #  - --allow-root
 
@@ -31,26 +31,19 @@ jupyterhub:
     #    kubespawner_override:
     #      default_url: "/tree"
     
-    storage:
-      type: "static"
-      static:
-        pvcName: "home-vol"
-        subPath: 'home/{username}'
-    #extraEnv:
-    #  CHOWN_HOME: 'yes'
-    #uid: 0
-    #fsGid: 0
-    #cmd: "start-singleuser.sh"
-
-  
-      homeMountPath: /home/{username}
-      extraVolumes: 
-        - name: jupyterhub-shared
-          persistentVolumeClaim:
-            claimName: shared-vol
-      extraVolumeMounts:
-        - name: jupyterhub-shared
-          mountPath: /home/shared
+    #storage:
+    #  type: "static"
+    #  static:
+    #    pvcName: "home-vol"
+    #    subPath: 'home/{username}'  
+    #  homeMountPath: /home/{username}
+    #  extraVolumes: 
+    #    - name: jupyterhub-shared
+    #      persistentVolumeClaim:
+    #        claimName: shared-vol
+    #  extraVolumeMounts:
+    #    - name: jupyterhub-shared
+    #      mountPath: /home/shared
 
 
   ingress:
@@ -73,19 +66,19 @@ jupyterhub:
     #      service: hub
     extraConfig:
       # note that the keys here (jupyterlab, authsetting) are arbitrary... 
-      jupyterlab: |
-        c.Spawner.cmd = ['jupyter-labhub', '--allow-root']
-      authsetting: |
-        from jupyterhub.auth import DummyAuthenticator
-        from tornado import gen
+      #jupyterlab: |
+      #  c.Spawner.cmd = ['jupyter-labhub', '--allow-root']
+      #authsetting: |
+      #  from jupyterhub.auth import DummyAuthenticator
+      #  from tornado import gen
 
-        class DummyExtraAuthenticator(DummyAuthenticator):
+      # class DummyExtraAuthenticator(DummyAuthenticator):
           
-          @gen.coroutine
-          def pre_spawn_start(self, user, spawner):
-            spawner.environment['NB_USER'] = user.name
+      #    @gen.coroutine
+      #    def pre_spawn_start(self, user, spawner):
+      #      spawner.environment['NB_USER'] = user.name
         
-        c.JupyterHub.authenticator_class = DummyExtraAuthenticator
+      #  c.JupyterHub.authenticator_class = DummyExtraAuthenticator
 
 
 nfs-server-provisioner:
