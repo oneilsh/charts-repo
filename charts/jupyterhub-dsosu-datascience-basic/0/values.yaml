@@ -7,7 +7,7 @@ jupyterhub:
       guarantee: 1G
     cpu:
       limit: 0.5
-      gaurantee: 0.5
+      gaurantee: 1.0
     image:
       name: jupyter/datascience-notebook
       tag: 82d1d0bf0867
@@ -18,9 +18,9 @@ jupyterhub:
       #CHOWN_EXTRA_OPTS: '-R'
     uid: 0
     fsGid: 0
-    cmd:
-      - jupyterhub-singleuser
-      - --allow-root
+    #cmd:
+    #  - jupyterhub-singleuser
+    #  - --allow-root
 
     #profileList:
     #  - display_name: "DataScience Notebook"
@@ -74,7 +74,7 @@ jupyterhub:
     extraConfig:
       # note that the keys here (jupyterlab, authsetting) are arbitrary... 
       jupyterlab: |
-        c.Spawner.cmd = ['jupyter-labhub']
+        c.Spawner.cmd = ['jupyter-labhub', '--allow-root']
       authsetting: |
         from jupyterhub.auth import DummyAuthenticator
         from tornado import gen
