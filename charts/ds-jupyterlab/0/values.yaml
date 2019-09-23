@@ -4,7 +4,7 @@ jupyterhub:
   singleuser:
     memory:
       limit: 1G
-      guarantee: 1G
+      guarantee: 0.5G
     cpu:
       limit: 0.5
       gaurantee: 1.0
@@ -35,13 +35,13 @@ jupyterhub:
         pvcName: "home-vol"
         subPath: "home/{username}"
       homeMountPath: /home/{username}
-    #  extraVolumes: 
-    #    - name: jupyterhub-shared
-    #      persistentVolumeClaim:
-    #        claimName: shared-vol
-    #  extraVolumeMounts:
-    #    - name: jupyterhub-shared
-    #      mountPath: /home/shared
+      extraVolumes: 
+        - name: jupyterhub-shared
+          persistentVolumeClaim:
+            claimName: shared-vol
+      extraVolumeMounts:
+        - name: jupyterhub-shared
+          mountPath: /home/shared
 
 
   ingress:
@@ -73,7 +73,7 @@ nfs-server-provisioner:
     enabled: true
     storageClass: "gp2"
     accessMode: ReadWriteOnce
-    size: 4Gi
+    size: 20Gi
 
   storageClass:
     create: true
@@ -84,7 +84,6 @@ nfs-server-provisioner:
     mountOptions:
       - vers=4.1
       - noatime
-      - no_root_squash
 
   # otherwise the name might be too long and hit the 63-char limit
   nameOverride: nfs-prov
