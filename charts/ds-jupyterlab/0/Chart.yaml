@@ -1,20 +1,17 @@
 name: ds-jupyterlab
 version: 0.1.1
 appVersion: 0.9
-description: Description
+description: JupyerLab with Python, Julia, R Support (no RStudio)
 icon: https://bitnami.com/assets/stacks/wordpress/img/wordpress-stack-220x234.png
 keywords:
-- wordpress
-- cms
-- blog
-- http
-- web
-- application
-- php
-home: http://www.wordpress.com/
+- lab
+- python
+- R
+- julia
+home: https://github.com/oneilsh/charts-repo
 sources:
-- https://github.com/bitnami/bitnami-docker-wordpress
+  - https://github.com/oneilsh/charts-repo
 maintainers:
-- name: Bitnami
-  email: containers@bitnami.com
+- name: Shawn
+  email: oneilsh@gmail.com
 engine: gotpl
