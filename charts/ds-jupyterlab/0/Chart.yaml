@@ -2,7 +2,7 @@ name: ds-jupyterlab
 version: 0.1.1
 appVersion: 0.9
 description: JupyerLab with Python, Julia, R Support (no RStudio)
-icon: https://bitnami.com/assets/stacks/wordpress/img/wordpress-stack-220x234.png
+icon: https://github.com/jupyterlab.png?size=100
 keywords:
 - lab
 - python
