@@ -39,8 +39,8 @@ persistence:
   size: 10Gi
 
 ## For creating the StorageClass automatically:
-#storageClass:
-#  create: false
+storageClass:
+  create: false
 #
 #  ## Set a provisioner name. If unset, a name will be generated.
 #  # provisionerName:
