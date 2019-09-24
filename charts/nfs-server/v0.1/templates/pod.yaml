@@ -5,6 +5,10 @@ metadata:
   labels:
     role: nfs
 spec:
+  volumes: 
+    - name: nfsexport
+      persistentVolumeClaim:
+        claimName: nfs-pvc
   containers:
     - name: nfs-server-container
       image: cpuguy83/nfs-server
@@ -13,3 +17,7 @@ spec:
       args:
         # Pass the paths to share to the Docker image
         - /exports
+      volumeMounts:
+        - name: nfsexport
+          mount: /exports
+  
