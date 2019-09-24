@@ -24,7 +24,7 @@ service:
   externalIPs: []
 
 persistence:
-  enabled: false
+  enabled: true
 
   ## Persistent Volume Storage Class
   ## If defined, storageClassName: <storageClass>
@@ -36,11 +36,11 @@ persistence:
   # storageClass: "-"
 
   accessMode: ReadWriteOnce
-  size: 1Gi
+  size: 10Gi
 
 ## For creating the StorageClass automatically:
 storageClass:
-  create: true
+  create: false
 
   ## Set a provisioner name. If unset, a name will be generated.
   # provisionerName:
