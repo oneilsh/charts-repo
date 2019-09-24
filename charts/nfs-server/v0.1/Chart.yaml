@@ -1,0 +1,15 @@
+name: nfs-server
+version: 0.1
+appVersion: 0.1
+description: Basic NFS server based on image cpuguy83/nfs-server
+icon: https://i.imgur.com/5dgBWUz.png
+keywords:
+- storage
+- nfs
+home: https://github.com/oneilsh/charts-repo
+sources:
+  - https://github.com/oneilsh/charts-repo
+maintainers:
+- name: Shawn
+  email: oneilsh@gmail.com
+engine: gotpl
