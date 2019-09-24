@@ -10,3 +10,5 @@ spec:
     requests:
       storage: 10Gi
   storageClassName: "gp2"
+  volumeName: nfs-pv
+    
