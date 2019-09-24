@@ -19,5 +19,5 @@ spec:
         - /exports
       volumeMounts:
         - name: nfsexport
-          mount: /exports
+          mountPath: /exports
   
