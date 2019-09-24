@@ -39,28 +39,28 @@ persistence:
   size: 10Gi
 
 ## For creating the StorageClass automatically:
-storageClass:
-  create: false
-
-  ## Set a provisioner name. If unset, a name will be generated.
-  # provisionerName:
-
-  ## Set StorageClass as the default StorageClass
-  ## Ignored if storageClass.create is false
-  defaultClass: false
-
-  ## Set a StorageClass name
-  ## Ignored if storageClass.create is false
-  name: nfs
-
-  # set to null to prevent expansion
-  allowVolumeExpansion: true
-  ## StorageClass parameters
-  parameters: {}
-
-  mountOptions:
-    - vers=4.1
-    - noatime
+#storageClass:
+#  create: false
+#
+#  ## Set a provisioner name. If unset, a name will be generated.
+#  # provisionerName:
+#
+#  ## Set StorageClass as the default StorageClass
+#  ## Ignored if storageClass.create is false
+#  defaultClass: false
+#
+#  ## Set a StorageClass name
+#  ## Ignored if storageClass.create is false
+#  name: nfs
+#
+#  # set to null to prevent expansion
+#  allowVolumeExpansion: true
+#  ## StorageClass parameters
+#  parameters: {}
+#
+#  mountOptions:
+#    - vers=4.1
+#    - noatime
 
   ## ReclaimPolicy field of the class, which can be either Delete or Retain
   reclaimPolicy: Delete
