@@ -47,7 +47,7 @@ jupyterhub:
   ingress:
     enabled: true
     hosts:
-      - ac42a9d6bdb3111e991980a5d440c295-1658683687.us-west-2.elb.amazonaws.com
+      - ae0ddea81dfc711e9bc930243f4b71e9-1085611928.us-west-2.elb.amazonaws.com
         #pathSuffix: '*'
     annotations: 
       kubernetes.io/ingress.class: nginx
