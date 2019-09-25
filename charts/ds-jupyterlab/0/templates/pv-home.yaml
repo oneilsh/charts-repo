@@ -8,6 +8,6 @@ spec:
   accessModes:
     - ReadWriteMany
   nfs:
-    server: nfs-claim-home-nfs-server-provisioner
+    server: nfs-service
     path: "/"
 
