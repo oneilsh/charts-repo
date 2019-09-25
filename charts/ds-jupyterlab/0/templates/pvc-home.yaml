@@ -18,7 +18,7 @@ metadata:
   # trying to avoid this apparent bug: https://stackoverflow.com/questions/51358856/kubernetes-cant-delete-persistentvolumeclaim-pvc
   #finalizers: []
 spec:
-  storageClassName: shareable
+  storageClassName: fast
   accessModes:
     - ReadWriteMany
   #selector:
