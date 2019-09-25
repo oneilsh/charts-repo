@@ -10,6 +10,6 @@ spec:
   accessModes:
     - ReadWriteMany
   nfs:
-    server: nfs-service.ds-jupyterlab.svc.cluster.local
+    server: 10.100.210.71
     path: "/"
 
