@@ -21,6 +21,9 @@ spec:
   #storageClassName: nfs
   accessModes:
     - ReadWriteMany
+  selector:
+    matchLabels:
+      usage: home
   resources:
     requests:
       storage: 10Gi
