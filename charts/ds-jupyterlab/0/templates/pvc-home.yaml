@@ -24,6 +24,7 @@ spec:
   selector:
     matchLabels:
       usage: home
+  storageClassName: ""
   resources:
     requests:
       storage: 10Gi
